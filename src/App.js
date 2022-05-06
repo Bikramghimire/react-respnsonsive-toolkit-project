@@ -10,15 +10,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} exact />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/*" element={<NotFound />} />
-
-          {/* <Route index element={<Home />} />
-            <Route path="teams" element={<Teams />}>
-              <Route path=":teamId" element={<Team />} />
-              <Route path="new" element={<NewTeamForm />} />
-              <Route index element={<LeagueStandings />} /> */}
-          {/* </Route>
-          </Route> */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>
