@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Cart from "./components/cart/Cart";
 import Home from "./components/home/Home";
 import Navbar from "./components/navbar/Navbar";
+import SingleItem from "./components/singleItem/SingleItem";
 function App() {
   return (
     <div className="App">
@@ -9,6 +10,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} exact />
+          <Route path="/item/:id" element={<SingleItem />} exact />
           <Route path="/cart" element={<Cart />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

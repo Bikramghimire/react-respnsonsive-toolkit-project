@@ -18,7 +18,7 @@ const Navbar = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <MainBar position="static">
+    <MainBar position="sticky" sx={{ top: "0px", zIndex: 9999 }}>
       <Container maxWidth="xl">
         <NavBar>
           <Link to="/">
