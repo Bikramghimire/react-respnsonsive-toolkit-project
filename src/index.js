@@ -5,10 +5,11 @@ import App from "./App";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import productReducer, { productsFetch } from "./features/productSlice";
-
+import cardReducer from "./features/cartSlice";
 const store = configureStore({
   reducer: {
     products: productReducer,
+    cart: cardReducer,
   },
 });
 store.dispatch(productsFetch());

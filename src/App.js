@@ -3,10 +3,13 @@ import Cart from "./components/cart/Cart";
 import Home from "./components/home/Home";
 import Navbar from "./components/navbar/Navbar";
 import SingleItem from "./components/singleItem/SingleItem";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <ToastContainer />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} exact />
