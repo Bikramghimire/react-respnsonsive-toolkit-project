@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   CartBar,
   CountBar,
@@ -10,13 +10,16 @@ import {
 import HomeIcon from "@mui/icons-material/Home";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import { Container, Typography } from "@mui/material";
-import { useTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getTotalCart } from "../../features/cartSlice";
 
 const Navbar = () => {
-  const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down("sm"));
+  const dispatch = useDispatch();
+  const cartData = useSelector((state) => state.cart);
+  useEffect(() => {
+    dispatch(getTotalCart());
+  }, [cartData, dispatch]);
   return (
     <MainBar position="sticky" sx={{ top: "0px", zIndex: 9999 }}>
       <Container maxWidth="xl">
@@ -44,7 +47,7 @@ const Navbar = () => {
               />
               <CountBar>
                 <Typography variant="p" component="p">
-                  3
+                  {cartData.cartTotalQuantity}
                 </Typography>
               </CountBar>
             </CartBar>

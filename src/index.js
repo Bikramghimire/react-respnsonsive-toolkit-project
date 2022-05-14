@@ -5,7 +5,7 @@ import App from "./App";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import productReducer, { productsFetch } from "./features/productSlice";
-import cardReducer from "./features/cartSlice";
+import cardReducer, { getTotalCart } from "./features/cartSlice";
 const store = configureStore({
   reducer: {
     products: productReducer,
@@ -13,6 +13,7 @@ const store = configureStore({
   },
 });
 store.dispatch(productsFetch());
+store.dispatch(getTotalCart());
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>

@@ -17,4 +17,13 @@ const HeaderTitleStyle = styled(Box)(({ theme }) => ({
   height: "2.3rem",
 }));
 
-export { HeaderStyle, HeaderTitleStyle };
+const SubTotalStyle = styled(Box)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "end",
+  margin: "2rem 0rem",
+  marginRight: "4rem",
+}));
+const SubTotalText = styled(Typography)(({ theme }) => ({}));
+
+export { HeaderStyle, HeaderTitleStyle, SubTotalStyle, SubTotalText };
